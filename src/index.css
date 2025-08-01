@@ -1,0 +1,19 @@
+@import "tailwindcss";body {
+  @apply bg-[#02111B] text-[#CBD2D0] font-sans m-0 p-0;
+}
+
+
+header, footer {
+  @apply bg-gray-200 text-gray-800;
+  padding: 1rem;
+}
+
+button, input, select, textarea {
+  @apply bg-gray-200 text-gray-800 border border-gray-300 rounded p-2;
+}
+
+button:hover, input:focus, select:focus, textarea:focus {
+  border-color: #636e72;
+  outline: none;
+}
+

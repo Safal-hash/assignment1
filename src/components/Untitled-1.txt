@@ -1,0 +1,5 @@
+my hex codes:
+bg - 02111B
+text - CBD2D0
+special color - EF626C
+header - 8693AB
