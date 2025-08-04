@@ -15,10 +15,21 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
-    //Leaving this empty as I can use it for form submission later
-    navigate('/');
+    const res = await fetch('/api/contacts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      alert('Contact submitted');
+      setForm({ firstname: '', lastname: '', email: '' });
+    } else {
+      alert(data.message || 'Submit failed');
+    }
   };
 
   return (
