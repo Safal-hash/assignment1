@@ -17,7 +17,7 @@ const Contact = () => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/contacts', {
+    const res = await fetch('http://localhost:5000/api/contacts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
@@ -26,12 +26,11 @@ const handleSubmit = async (e) => {
     const data = await res.json();
     if (res.ok) {
       alert('Contact submitted');
-      setForm({ firstname: '', lastname: '', email: '' });
+      setForm({ firstName: '', lastName: '', email: '', contactNumber: '', message: '' });
     } else {
       alert(data.message || 'Submit failed');
     }
   };
-
   return (
     <div className="max-w-xl mx-auto my-10 p-6 border border-gray-300 rounded-lg shadow bg-gray-transparent">
       <h1 className="text-3xl font-bold mb-6 text-center">Contact Page</h1>
